@@ -11,7 +11,7 @@ gulp.task("updateManifestIds", function () {
         let shiftCharacter = id[0];
         let newCharacter;
         if (!parseInt(shiftCharacter)) {
-          newCharacter = shiftCharacter !== "z" ? String.fromCharCode(shiftCharacter.charCodeAt() + 1) : "0";
+          newCharacter = shiftCharacter !== "f" ? String.fromCharCode(shiftCharacter.charCodeAt() + 1) : "0";
         } else {
           newCharacter = shiftCharacter !== "9" ? (parseInt(shiftCharacter) + 1).toString() : "a";
         }
