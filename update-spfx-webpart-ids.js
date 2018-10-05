@@ -11,9 +11,9 @@ gulp.task("updateManifestIds", function () {
         let shiftCharacter = id[0];
         let newCharacter;
         if (!parseInt(shiftCharacter)) {
-          newCharacter = shiftCharacter !== "f" ? String.fromCharCode(shiftCharacter.charCodeAt() + 1) : "0";
+          newCharacter = shiftCharacter.charCodeAt() < 102 ? String.fromCharCode(shiftCharacter.charCodeAt() + 1) : "0";
         } else {
-          newCharacter = shiftCharacter !== "9" ? (parseInt(shiftCharacter) + 1).toString() : "a";
+          newCharacter = shiftCharacter.charCodeAt() < 57 ? String.fromCharCode(shiftCharacter.charCodeAt() + 1) : "a";
         }
         id[0] = newCharacter;
         json.id = id.reverse().join("");
